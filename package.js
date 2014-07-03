@@ -36,9 +36,15 @@ Package.on_use(function (api) {
 
   api.add_files('lib/server/route_controller.js', 'server');
   api.add_files('lib/server/router.js', 'server');
+  api.add_files('lib/server/multiparty-body-parser.js', 'server');
 
   api.use('webapp', 'server');
-  Npm.depends({connect: '2.9.0'});
+  Npm.depends({
+    'connect': '3.0.1',
+    'multiparty': '3.2.8',
+    'qs': '0.6.6',
+    'body-parser': '1.4.3'
+  });
 
   api.export('RouteController', ['client', 'server']);
   api.export('Route', ['client', 'server']);
